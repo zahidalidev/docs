@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import React from 'react';
 
 function AnchorIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 	return (
@@ -16,7 +17,27 @@ function AnchorIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 	);
 }
 
+function sanitizeAnchors(children: any): any {
+	return React.Children.map(children, (child: any) => {
+		if (typeof child === 'string')
+			return child;
+
+		if (React.isValidElement(child)) {
+			if (child.type === 'a')
+				return sanitizeAnchors(child.props.children);
+
+			return React.cloneElement(child, {
+				...child.props,
+				children: sanitizeAnchors(child.props.children),
+			})
+		}
+
+		return child;
+	});
+}
+
 function Anchor({id, children}: {id: string; children: React.ReactNode}) {
+	const sanitizedChildren = sanitizeAnchors(children)
 	return (
 		<Link
 			href={`#${id}`}
@@ -25,7 +46,7 @@ function Anchor({id, children}: {id: string; children: React.ReactNode}) {
 			<div className="absolute ml-[-28px] mt-1 hidden opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus:opacity-100 md:block lg:z-50">
 				<AnchorIcon className="h-5 w-5 stroke-black transition group-focus:stroke-link-light dark:stroke-slate-200 dark:group-focus:stroke-link" />
 			</div>
-			{children}
+			{sanitizedChildren}
 		</Link>
 	);
 }
@@ -38,6 +59,7 @@ interface HeadingProps {
 
 export function Heading({level = '2', id, props}: HeadingProps) {
 	let Component = `h${level}` as 'h2' | 'h3';
+	console.log('props.children', props.children)
 	return (
 		<Component {...props}>
 			<Anchor id={id}>{props.children}</Anchor>
