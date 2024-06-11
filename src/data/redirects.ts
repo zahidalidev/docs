@@ -6710,7 +6710,7 @@ const updatedRedirectsData = redirectsData.map(redirect => {
         destination: String(redirect.destination).replace("http://localhost:3000/docs", ""),
         permanent: redirect.permanent
     };
-});
+})
 
 
 module.exports = {
