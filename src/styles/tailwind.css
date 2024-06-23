@@ -67,6 +67,14 @@
 
 /* Custom Utilities */
 @layer utilities {
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+
+	.no-scrollbar {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
 	/* ==================== Borders ==================== */
 	.sg-border-gradient-saturn {
 		border-image-slice: 1 !important;
