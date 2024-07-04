@@ -10,6 +10,8 @@ import { Tab, Tabs } from './mdx/Tabs';
 import ResourceEstimator from './resource-estimator/ResourceEstimator';
 import { PreCodeBlock } from './PreCodeBlock';
 import { ContentTabs, ContentTab } from './ContentTabs';
+import { CustomVideo } from './CustomVideo';
+
 
 const MdxComponents = (version?: string) => {
 	return {
@@ -52,15 +54,13 @@ const MdxComponents = (version?: string) => {
 		img: (props: any) => {
 			return <img className="rounded-xl" {...props} />;
 		},
-		video: (props: any) => {
-			return <video className="rounded-xl" {...props} />;
-		},
 		pre: (props: any) => <PreCodeBlock {...props} />,
 		table: (props: any) => (
 			<div {...props} className="table-auto w-full overflow-x-auto">
 				<table>{props.children}</table>
 			</div>
-		)
+		),
+		Video: (props: any) => <CustomVideo {...props}>{props.children}</CustomVideo>, 
 	};
 };
 
