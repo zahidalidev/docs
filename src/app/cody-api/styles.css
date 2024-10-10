@@ -323,4 +323,54 @@
 
 .open-api-container .HttpService .sl-stack.sl-stack--vertical .sl-panel__content-wrapper .sl-panel__content div div {
   border-width: 0px;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+/* .openapi-light .sl-elements-api > .sl-flex {
+  display: none;
+} */
+
+/* Hide the sidebar on mobile screens (up to 768px) */
+@media (max-width: 768px) {
+  .openapi-light .sl-elements-api > .sl-flex {
+    display: none; /* Hide sidebar on mobile */
+  }
+
+  /* Drawer is hidden by default */
+  .drawer {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #fff; /* Or match your theme color */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 1rem;
+  }
+
+  /* Show the drawer when active */
+  .drawer.open {
+    display: block;
+  }
+
+  /* Style the drawer icon */
+  .drawer-icon {
+    position: fixed;
+    top: 150px;
+    left: 16px;
+    cursor: pointer;
+    z-index: 2000;
+  }
+}
+
+/* Show the sidebar normally on larger screens */
+@media (min-width: 769px) {
+  .openapi-light .sl-elements-api > .sl-flex {
+    display: block;
+  }
+}
+>>>>>>> Stashed changes
