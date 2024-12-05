@@ -297,6 +297,10 @@ export const navigation: NavigationItem[] = [
 				href: "/api/graphql",
 			},
 			{
+        title: "Sourcegraph Cody API",
+        href: "/api/cody",
+      },
+			{
 				title: "Sourcegraph Stream API",
 				href: "/api/stream_api",
 			},

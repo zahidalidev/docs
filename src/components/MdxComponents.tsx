@@ -12,9 +12,11 @@ import { Tab, Tabs } from './mdx/Tabs';
 import { PreCode, PreCodeBlock } from './PreCodeBlock';
 import ResourceEstimator from './resource-estimator/ResourceEstimator';
 import { Badge } from './ui/badge';
+import { ApiOperation } from './openapi/ApiOperation';
 
 const MdxComponents = (version?: string) => {
   return {
+    ApiOperation,
     FeatureParity,
     ResourceEstimator,
     AWSOneClickLaunchForm,

@@ -57,7 +57,7 @@ export async function PreCodeBlock({ children, ...props }: PreProps) {
   const propsObj = { ...props }
   const propsValues = Object.values(propsObj)
   const [, , , dataLanguage, dataTheme] = propsValues
-  const lang = dataLanguage || "shell"
+  const lang = dataLanguage || propsObj?.language || "shell"
 
   let codeContent = props?.raw || ''
 
@@ -75,9 +75,14 @@ export async function PreCodeBlock({ children, ...props }: PreProps) {
   codeContent = codeContent.replace(/{CURRENT_VERSION}/g, version)
   codeContent = codeContent.replace(/{CURRENT_VERSION_NO_V}/g, version_no_v)
 
+  console.log('\n\n\n __children', children)
+  console.log('\n\n\n __dataLanguage', lang)
+  console.log('\n\n\n __dataTheme', dataTheme)
+
+
   return (
     <div className="relative">
-      <pre className="pt-12" data-language={lang} data-theme={dataTheme}>
+      <pre className="pt-12" data-language={lang} data-theme={dataTheme || 'default'}>
         <CopyButton lang={lang} text={codeContent} />
         {children}
       </pre>
