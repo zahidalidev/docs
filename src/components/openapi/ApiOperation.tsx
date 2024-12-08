@@ -100,9 +100,9 @@ function example(operation: Operation) {
 					<Code lang="python">{pythonExample(operation)}</Code>
 				</Tab>
 			</Tabs>
-			<p>
-				<b>Example response:</b>
-			</p>
+			<h3>
+				Example response:
+			</h3>
 			<Code lang="json">
 				{JSON.stringify(operation.example.response, null, 2)}
 			</Code>
@@ -217,9 +217,7 @@ function schemaProperties(
 		rows.push(
 			<tr>
 				<td>
-					<code>
-						{prefix ? `${prefix}.${property.name}` : property.name}
-					</code>
+					{prefix ? `${prefix}.${property.name}` : property.name}
 				</td>
 				<td>{schemaType(property.schema, refs)}</td>
 				<td>{schemaRequired(schema, property)}</td>
