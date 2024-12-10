@@ -345,6 +345,44 @@ export const navigation: NavigationItem[] = [
 	},
 ];
 
+
+export const apiNavigation: NavigationItem[] = [
+	{
+		separator: "Sourcegraph API",
+		topics: [
+			{
+				title: "Overview",
+				href: "/api/cody/overview"
+			},
+			{ 
+				title: "Quickstart", 
+				href: "/api/cody/quickstart" 
+			},
+			{
+				title: "End Points",
+				href: "/api/cody/endpoints",
+				sections: [
+					{ title: "Features", href: "/code-search/features" },
+					{ title: "Search Query Syntax", href: "/code-search/queries" },
+					{ title: "Code Navigation", href: "/code-search/code-navigation",
+
+					},
+					{
+						title: "Advanced Features", href: "/code-search/working/saved_searches",
+					},
+					{
+						title: "FAQs", href: "/code-search/faq",
+					},
+				],
+			},
+		],
+	},
+]
+
+export const apiVersionNavigations: VersionNavigations = {
+	navigation: apiNavigation, // latest version
+}
+
 export const versionNavigations: VersionNavigations = {
 	navigation, // latest version
 }
