@@ -51,7 +51,7 @@ function Header() {
 				</div>
 				<div className="relative flex flex-grow basis-0 items-center">
 					<Link
-						href="/"
+						href="https://sourcegraph.com/"
 						aria-label="Home page"
 						className="relative z-10 hidden md:block"
 					>
@@ -71,6 +71,20 @@ function Header() {
 					>
 						Help
 					</Link> */}
+					<Link
+						href="/"
+						aria-label="Home page"
+						className="relative z-10 md:block text-vermilion-08 hover:text-vermilion-07 ml-2"
+					>
+						Documentation
+					</Link>
+					<Link
+						href="/help"
+						aria-label="Home page"
+						className="relative z-10 hidden md:block text-vermilion-08 hover:text-vermilion-07 ml-4"
+					>
+						Help
+					</Link>
 					<Link
 						href="/"
 						className="relative z-10 block md:hidden"
