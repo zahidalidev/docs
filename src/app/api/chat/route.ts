@@ -1,7 +1,8 @@
 import { Langbase } from 'langbase';
 import { NextRequest } from 'next/server';
 
-const apiKey = process.env.LANGBASE_API_KEY!;
+// const apiKey = process.env.LANGBASE_API_KEY!;
+const apiKey = 'pipe_DyGvtRozwYi1TTqJgxGZDiCrS4bfhsRQA2DDLasaYw7bKt8x6BJR324vwcgDmTk7uvGKXjYuBXhMpEgynd5Yq7Q';
 
 const langbase = new Langbase({
 	apiKey
